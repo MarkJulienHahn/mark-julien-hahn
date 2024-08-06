@@ -31,12 +31,6 @@ const ProjectsList = ({
     }
   };
 
-  // useEffect(() => {
-  //   setClickedEntry();
-  // }, [focusDisc, focusCoop, focusClnt]);
-
-  console.log(focusDisc, focusCoop);
-
   return (
     <ul className="grid-4fr">
       {work.map((entry, i) => (

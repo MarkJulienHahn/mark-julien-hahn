@@ -33,6 +33,7 @@ const Work = ({ work, disciplines, cooperations, clients }) => {
         fitType: focus?.images[0]?.media?.fitType,
         focus: focus,
         background: focus?.images[0]?.media?.background,
+        link: focus?.slug?.current
       });
     } else {
       setBgImage({
@@ -105,27 +106,28 @@ const Work = ({ work, disciplines, cooperations, clients }) => {
             clickedEntry={clickedEntry}
             setClickedEntry={setClickedEntry}
           />
-
-          <ListMobile
-            title="Disciplines"
-            items={disciplines}
-            onMouseEnter={(entry) => setFocusDisc([entry])}
-            onMouseLeave={() => setFocusCoop([])}
-            setProjOnly={setProjOnly}
-            focusItems={focusDisc}
-            setFocus={setFocus}
-            focusType="grid-2fr"
-          />
-          <ListMobile
-            title="Cooperations"
-            items={cooperations}
-            onMouseEnter={(entry) => setFocusCoop([entry])}
-            onMouseLeave={() => setFocusDisc([])}
-            setProjOnly={setProjOnly}
-            focusItems={focusCoop}
-            setFocus={setFocus}
-            focusType="grid-2fr"
-          />
+          <div className="mobileBottom">
+            <ListMobile
+              title="Disciplines"
+              items={disciplines}
+              onMouseEnter={(entry) => setFocusDisc([entry])}
+              onMouseLeave={() => setFocusCoop([])}
+              setProjOnly={setProjOnly}
+              focusItems={focusDisc}
+              setFocus={setFocus}
+              focusType="grid-2fr"
+            />
+            <ListMobile
+              title="Cooperations"
+              items={cooperations}
+              onMouseEnter={(entry) => setFocusCoop([entry])}
+              onMouseLeave={() => setFocusDisc([])}
+              setProjOnly={setProjOnly}
+              focusItems={focusCoop}
+              setFocus={setFocus}
+              focusType="grid-2fr"
+            />
+          </div>
         </ListWrapper>
       </div>
       <Link href="/imprint">
