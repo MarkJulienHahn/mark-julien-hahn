@@ -14,6 +14,14 @@ export default defineType({
       validation: (Rule) => Rule.required().min(3).max(80),
     },
     {
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: {
+        source: "title",
+      },
+    },
+    {
       name: "month",
       title: "Month",
       type: "number", // Keeping the type as number for month values
@@ -52,36 +60,125 @@ export default defineType({
         })(),
       },
     },
-    {
-      name: "description",
-      title: "Description",
-      type: "array",
-      validation: (Rule) => Rule.required(),
-      of: [
-        {
-          type: "block",
-          styles: [{ title: "Normal", value: "normal" }],
-          lists: [],
-          marks: {
-            decorators: [{ title: "Emphasis", value: "em" }],
-          },
-        },
-      ],
-    },
+    // {
+    //   name: "description",
+    //   title: "Description",
+    //   type: "array",
+    //   validation: (Rule) => Rule.required(),
+    //   of: [
+    //     {
+    //       type: "block",
+    //       styles: [{ title: "Normal", value: "normal" }],
+    //       lists: [],
+    //       marks: {
+    //         decorators: [{ title: "Emphasis", value: "em" }],
+    //       },
+    //     },
+    //   ],
+    // },
     {
       name: "images",
       title: "Images",
       type: "array",
       of: [
         {
-          name: "image",
-          title: "Image",
-          type: "image",
+          name: "media",
+          title: "Media",
+          type: "object",
           fields: [
             {
-              title: "Alternative Text",
-              name: "alt",
+              name: "type",
+              title: "Type",
               type: "string",
+              options: {
+                list: [
+                  { title: "Image", value: "image" },
+                  { title: "Video", value: "video" },
+                ],
+                layout: "radio",
+                direction: "horizontal",
+              },
+              initialValue: "image",
+            },
+            {
+              name: "image",
+              title: "Image",
+              type: "image",
+              hidden: ({ parent }) => parent?.type !== "image",
+              fields: [
+                {
+                  title: "Alternative Text",
+                  name: "alt",
+                  type: "string",
+                },
+                {
+                  title: "Fit Type",
+                  name: "fitType",
+                  type: "string",
+                  options: {
+                    list: [
+                      { title: "Cover", value: "cover" },
+                      { title: "Contain", value: "contain" },
+                    ],
+                    layout: "radio",
+                    direction: "horizontal",
+                  },
+                  initialValue: "white",
+                },
+                {
+                  title: "Background Color",
+                  name: "background",
+                  type: "string",
+                  options: {
+                    list: [
+                      { title: "Black", value: "black" },
+                      { title: "White", value: "white" },
+                    ],
+                    layout: "radio",
+                    direction: "horizontal",
+                  },
+                  initialValue: "white",
+                },
+              ],
+            },
+            {
+              name: "video",
+              title: "Video",
+              type: "file",
+              hidden: ({ parent }) => parent?.type !== "video",
+              options: {
+                accept: "video/*",
+              },
+              fields: [
+                {
+                  title: "Fit Type",
+                  name: "fitType",
+                  type: "string",
+                  options: {
+                    list: [
+                      { title: "Cover", value: "cover" },
+                      { title: "Contain", value: "contain" },
+                    ],
+                    layout: "radio",
+                    direction: "horizontal",
+                  },
+                  initialValue: "cover",
+                },
+                {
+                  title: "Background Color",
+                  name: "background",
+                  type: "string",
+                  options: {
+                    list: [
+                      { title: "Black", value: "black" },
+                      { title: "White", value: "white" },
+                    ],
+                    layout: "radio",
+                    direction: "horizontal",
+                  },
+                  initialValue: "cover",
+                },
+              ],
             },
           ],
         },
