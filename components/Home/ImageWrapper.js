@@ -3,15 +3,23 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import { use100vh } from "react-div-100vh";
+
 const ImageWrapper = ({ bgImage }) => {
   const [background, setBackground] = useState(null);
+
+  const height = use100vh();
+
   useEffect(() => setBackground(bgImage?.background), [bgImage]);
 
   return (
-    <div className="imgWrapper" style={{ background: background }}>
+    <div
+      className="imgWrapper"
+      style={{ background: background, height: height }}
+    >
       <Link
         href={`/${bgImage?.link}`}
-        style={{ width: "100vw", height: "100vh" }}
+        style={{ width: "100vw", height: height }}
       >
         {bgImage?.url && (
           <>
