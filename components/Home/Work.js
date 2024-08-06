@@ -10,6 +10,8 @@ import ProjectsList from "./ProjectList";
 import ProjectsListMobile from "./ProjectListMobile";
 import ImageWrapper from "./ImageWrapper";
 
+import { use100vh } from "react-div-100vh";
+
 const Work = ({ work, disciplines, cooperations, clients }) => {
   const [bgImage, setBgImage] = useState(null);
 
@@ -22,6 +24,8 @@ const Work = ({ work, disciplines, cooperations, clients }) => {
 
   const isNotEmptyObject = (obj) => obj && Object.keys(obj).length > 0;
 
+  const height = use100vh();
+
   useEffect(() => {
     setFocusDisc(focus?.disciplines || []);
     setFocusCoop(focus?.cooperations || []);
@@ -33,7 +37,7 @@ const Work = ({ work, disciplines, cooperations, clients }) => {
         fitType: focus?.images[0]?.media?.fitType,
         focus: focus,
         background: focus?.images[0]?.media?.background,
-        link: focus?.slug?.current
+        link: focus?.slug?.current,
       });
     } else {
       setBgImage({
@@ -45,7 +49,7 @@ const Work = ({ work, disciplines, cooperations, clients }) => {
 
   return (
     <>
-      <div className="desktopOnly">
+      <div className="desktopOnly" style={{ height: height }}>
         <ListWrapper>
           <div className="grid-4fr ">
             <ProjectsList

@@ -16,7 +16,6 @@ export default function SingleSlider({ entry, setCurrentIndex, currentIndex }) {
   const [hoverText, setHoverText] = useState("");
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [color, setColor] = useState();
-  const [background, setBackground] = useState();
   const [imageLoaded, setImageLoaded] = useState(false);
   const [videoLoaded, setVideoLoaded] = useState(false);
 
@@ -51,10 +50,11 @@ export default function SingleSlider({ entry, setCurrentIndex, currentIndex }) {
     // setBackgroud
   }, [currentIndex]);
 
-  console.log(entry);
-
   return (
-    <div className="sliderWrapper" style={{ background: "white" }}>
+    <div
+      className="sliderWrapper"
+      style={{ background: "white", height: height, position: "relative" }}
+    >
       {entry.images.length && (
         <Swiper
           effect="fade"
