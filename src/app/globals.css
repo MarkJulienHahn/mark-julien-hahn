@@ -143,6 +143,10 @@ a {
 .mobileOnly {
   display: none;
 }
+.navigation {
+  color: white;
+  mix-blend-mode: difference;
+}
 
 @media screen and (max-width: 1400px) {
   body {
@@ -168,10 +172,7 @@ a {
   .desktopOnly {
     display: none;
   }
-  .navigation {
-    color: white;
-    mix-blend-mode: difference;
-  }
+
   .mobileBottom {
     position: fixed;
     bottom: 15px;

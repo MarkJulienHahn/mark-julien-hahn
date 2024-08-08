@@ -15,6 +15,15 @@ export default function () {
           Mark Julien Hahn (Email)
         </a>
         <br />
+        <a
+          className="link"
+          href="https://www.instagram.com/markjulienhahn/?hl=de"
+          target="blank"
+          rel="_noreferrer"
+        >
+          @markjulienhahn (Instagram)
+        </a>
+        <br />
         <br />
         Born 1994
         <br />

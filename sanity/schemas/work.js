@@ -123,7 +123,7 @@ export default defineType({
                     layout: "radio",
                     direction: "horizontal",
                   },
-                  initialValue: "white",
+                  initialValue: "contain",
                 },
                 {
                   title: "Background Color",
@@ -162,7 +162,7 @@ export default defineType({
                     layout: "radio",
                     direction: "horizontal",
                   },
-                  initialValue: "cover",
+                  initialValue: "contain",
                 },
                 {
                   title: "Background Color",

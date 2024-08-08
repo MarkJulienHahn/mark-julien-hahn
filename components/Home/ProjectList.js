@@ -37,7 +37,7 @@ const ProjectsList = ({
                       focusCooperation?.title === cooperation.title
                   )
                 ) ||
-                entry.clients.some((client) =>
+                entry?.clients?.some((client) =>
                   focusClnt.some(
                     (focusClient) => focusClient?.title === client.title
                   )

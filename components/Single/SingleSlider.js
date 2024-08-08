@@ -50,6 +50,8 @@ export default function SingleSlider({ entry, setCurrentIndex, currentIndex }) {
     // setBackgroud
   }, [currentIndex]);
 
+  console.log(entry);
+
   return (
     <div
       className="sliderWrapper"
@@ -140,7 +142,7 @@ export default function SingleSlider({ entry, setCurrentIndex, currentIndex }) {
                       style={{
                         width: "100%",
                         height: "100%",
-                        background: image?.media?.background,
+                        background: image?.media?.background || "white",
                         zIndex: 1,
                       }}
                       autoPlay
