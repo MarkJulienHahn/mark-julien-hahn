@@ -6,6 +6,7 @@ import { Inter } from "next/font/google";
 import "../globals.css";
 import Nav from "../../../components/Nav";
 import PageTransitionEffect from "../../../components/PageTransitionEffect";
+import CookieConsent from "../../../components/CookieConsent";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -41,6 +42,7 @@ export default function RootLayout({
       <body>
         <Nav />
         <PageTransitionEffect>{children}</PageTransitionEffect>
+        <CookieConsent />
       </body>
     </html>
   );

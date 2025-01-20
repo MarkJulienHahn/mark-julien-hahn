@@ -249,6 +249,36 @@ a:hover {
   max-width: 400px;
 }
 
+.cookie__wrapper {
+  position: fixed;
+  max-width: 400px;
+  bottom: var(--space-M);
+  left: var(--space-M);
+  padding: var(--space-S);
+  background: rgba(255, 255, 255, 0.838);
+  color: black;
+  border-radius: 2px;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.cookie__text {
+  margin-bottom: var(--space-S);
+}
+
+.cookie__buttons {
+  display: flex;
+}
+
+.cookie__button {
+  margin-right: var(--space-M);
+  cursor: pointer;
+}
+
+.cookie__button:hover {
+  opacity: 0.3;
+}
+
 @media screen and (max-width: 1200px) {
   :root {
     --space-XS: 3px;
@@ -367,5 +397,16 @@ a:hover {
   }
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 700px) {
+  .cookie__wrapper {
+    padding: var(--space-M);
+    max-width: calc(100vw - 2 * var(--space-M));
+  }
+
+  .cookie__text p {
+    font-size: 12.5px !important;
+    line-height: 18px !important;
+    letter-spacing: -0em !important;
+    word-spacing: -0.07em !important;
+  }
 }
