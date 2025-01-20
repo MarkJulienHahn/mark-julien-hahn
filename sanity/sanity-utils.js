@@ -19,7 +19,9 @@ export async function getWork() {
           type == "image" => {
             "url": image.asset->url,
             "alt": image.alt,
-            "color": image.asset->metadata.palette.lightVibrant.background,
+            "caption": image.caption,
+            "color": image.asset->metadata.palette.darkVibrant.background,
+            "dimensions": image.asset->metadata.dimensions,
             "fitType": image.fitType,
             "background": image.background
           },
@@ -29,6 +31,7 @@ export async function getWork() {
             "fitType": image.fitType,
             "background": image.background,
             "alt": image.alt,
+            "caption": image.caption
           }
         )
       }
@@ -51,7 +54,7 @@ export async function getCooperations() {
 }
 
 export async function getImprint() {
-  return client.fetch(groq`*[_type == "imprint"]{...}`);
+  return client.fetch(groq`*[_type == "imprint"]{...}[0]`);
 }
 
 export async function getPrivacy() {

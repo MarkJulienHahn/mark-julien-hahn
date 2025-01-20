@@ -21,25 +21,59 @@ export default defineType({
         source: "title",
       },
     },
+
+    {
+      name: "description",
+      title: "Description",
+      type: "array",
+      validation: (Rule) => Rule.required(),
+      of: [
+        {
+          type: "block",
+          styles: [{ title: "Normal", value: "normal" }],
+          lists: [],
+          marks: {
+            decorators: [{ title: "Emphasis", value: "em" }],
+          },
+        },
+      ],
+    },
+    {
+      name: "clientInformation",
+      title: "Client Information",
+      type: "array",
+      validation: (Rule) => Rule.required(),
+      of: [
+        {
+          type: "block",
+          styles: [{ title: "Normal", value: "normal" }],
+          lists: [],
+          marks: {
+            decorators: [{ title: "Emphasis", value: "em" }],
+          },
+        },
+      ],
+    },
+
     {
       name: "month",
       title: "Month",
-      type: "number", // Keeping the type as number for month values
+      type: "string",
       options: {
         list: (() => {
           const months = [
-            { title: "01", value: 1 },
-            { title: "02", value: 2 },
-            { title: "03", value: 3 },
-            { title: "04", value: 4 },
-            { title: "05", value: 5 },
-            { title: "06", value: 6 },
-            { title: "07", value: 7 },
-            { title: "08", value: 8 },
-            { title: "09", value: 9 },
-            { title: "10", value: 10 },
-            { title: "11", value: 11 },
-            { title: "12", value: 12 },
+            { title: "Jan", value: "Jan" },
+            { title: "Feb", value: "Feb" },
+            { title: "Mar", value: "Mar" },
+            { title: "Apr", value: "Apr" },
+            { title: "May", value: "May" },
+            { title: "Jun", value: "Jun" },
+            { title: "Jul", value: "Jul" },
+            { title: "Aug", value: "Aug" },
+            { title: "Sep", value: "Sep" },
+            { title: "Oct", value: "Oct" },
+            { title: "Nov", value: "Nov" },
+            { title: "Dec", value: "Dec" },
           ];
           return months;
         })(),
@@ -60,22 +94,9 @@ export default defineType({
         })(),
       },
     },
-    // {
-    //   name: "description",
-    //   title: "Description",
-    //   type: "array",
-    //   validation: (Rule) => Rule.required(),
-    //   of: [
-    //     {
-    //       type: "block",
-    //       styles: [{ title: "Normal", value: "normal" }],
-    //       lists: [],
-    //       marks: {
-    //         decorators: [{ title: "Emphasis", value: "em" }],
-    //       },
-    //     },
-    //   ],
-    // },
+
+    { name: "ongoing", title: "Ongoing", type: "boolean" },
+
     {
       name: "images",
       title: "Images",
@@ -111,33 +132,11 @@ export default defineType({
                   name: "alt",
                   type: "string",
                 },
+
                 {
-                  title: "Fit Type",
-                  name: "fitType",
+                  title: "Caption",
+                  name: "caption",
                   type: "string",
-                  options: {
-                    list: [
-                      { title: "Cover", value: "cover" },
-                      { title: "Contain", value: "contain" },
-                    ],
-                    layout: "radio",
-                    direction: "horizontal",
-                  },
-                  initialValue: "contain",
-                },
-                {
-                  title: "Background Color",
-                  name: "background",
-                  type: "string",
-                  options: {
-                    list: [
-                      { title: "Black", value: "black" },
-                      { title: "White", value: "white" },
-                    ],
-                    layout: "radio",
-                    direction: "horizontal",
-                  },
-                  initialValue: "white",
                 },
               ],
             },
@@ -151,32 +150,9 @@ export default defineType({
               },
               fields: [
                 {
-                  title: "Fit Type",
-                  name: "fitType",
+                  title: "Caption",
+                  name: "caption",
                   type: "string",
-                  options: {
-                    list: [
-                      { title: "Cover", value: "cover" },
-                      { title: "Contain", value: "contain" },
-                    ],
-                    layout: "radio",
-                    direction: "horizontal",
-                  },
-                  initialValue: "contain",
-                },
-                {
-                  title: "Background Color",
-                  name: "background",
-                  type: "string",
-                  options: {
-                    list: [
-                      { title: "Black", value: "black" },
-                      { title: "White", value: "white" },
-                    ],
-                    layout: "radio",
-                    direction: "horizontal",
-                  },
-                  initialValue: "cover",
                 },
               ],
             },
@@ -194,32 +170,6 @@ export default defineType({
           name: "discipline",
           type: "reference",
           to: [{ type: "disciplines" }],
-        },
-      ],
-    },
-    {
-      title: "Cooperations",
-      name: "cooperations",
-      type: "array",
-      of: [
-        {
-          title: "Cooperation",
-          name: "cooperation",
-          type: "reference",
-          to: [{ type: "cooperations" }],
-        },
-      ],
-    },
-    {
-      title: "Clients",
-      name: "clients",
-      type: "array",
-      of: [
-        {
-          title: "Client",
-          name: "client",
-          type: "reference",
-          to: [{ type: "clients" }],
         },
       ],
     },

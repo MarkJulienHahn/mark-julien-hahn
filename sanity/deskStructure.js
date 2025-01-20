@@ -34,18 +34,6 @@ export const myStructure = (S, context) =>
         S,
         context,
       }),
-      orderableDocumentListDeskItem({
-        type: "cooperations",
-        title: "Cooperations",
-        S,
-        context,
-      }),
-      orderableDocumentListDeskItem({
-        type: "clients",
-        title: "Clients",
-        S,
-        context,
-      }),
 
       S.divider(),
     ]);
