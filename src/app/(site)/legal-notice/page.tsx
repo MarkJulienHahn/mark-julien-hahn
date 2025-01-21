@@ -6,8 +6,6 @@ import { PortableText } from "next-sanity";
 export default async function Legals() {
   const imprint = await getImprint();
 
-  console.log(imprint);
-
   return (
     <>
       <main>

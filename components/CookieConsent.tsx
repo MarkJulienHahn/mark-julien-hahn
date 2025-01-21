@@ -29,7 +29,7 @@ export default function CookieConsent() {
     <div className="cookie__wrapper">
       <p className="cookie__text text__small">
         This website uses cookies to ensure you get the best experience on our
-        website.
+        website.{" "}
         <Link scroll={false} href="/legal-notice">
           Learn more.
         </Link>
