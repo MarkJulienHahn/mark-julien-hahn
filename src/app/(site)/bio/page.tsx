@@ -7,34 +7,36 @@ export default function Bio() {
       <section className="bio__text">
         <div>
           <p className="text__big">
-            Mark Julien Hahn (*1994) is a designer and art director currently
-            living in Berlin, Germany. <br />
+            Mark Julien Hahn (*1994) is a designer, typographer, and programmer
+            based in Berlin, Germany.
             <br />
-            {/* He operates his own graphic design studio and heads Softdrive
-            Foundry®, a type foundry. Alongside his design work, he teaches at
-            the Institute of Methodologies of Design and Representation at the
-            Technical University Braunschweig. */}
-            He operates his own graphic design studio where he works on
+            <br />
+            He runs an independent graphic design studio and leads Softdrive
+            Foundry®, a type foundry. He collaborates with various designers
+            and studios on both cultural and commercial projects. Previously, he
+            taught at the Institute of Methodologies of Design and
+            Representation at the Technical University of Braunschweig.
+            {/* He operates his own graphic design studio where he works on
             identities, type-design and programming projects. Alongside his
             design work, he teaches at the Institute of Methodologies of Design
-            and Representation at the Technical University Braunschweig.
+            and Representation at the Technical University Braunschweig. */}
             <br />
             <br />
             Links
             <br />
-            {/* 01{"  "}
+            01{"  "}
             <a
               href="https://softdrivefoundry.com"
               target="_blank"
               rel="noreferrer"
             >
               Softdrive Foundry®
-            </a>{" "} */}
-            <br />
+            </a>{" "}
+            {/* <br />
             01{"  "}
             <a href="https://www.imd.tu-bs.de/" target="_blank" rel="noreferrer">
               Institute for Methodologies of Design and Representation
-            </a>{" "}
+            </a>{" "} */}
             <br />
             02{"  "}
             <a href="https://stadtluecken.de" target="_blank" rel="noreferrer">
@@ -50,7 +52,7 @@ export default function Bio() {
           </p>
         </div>
         <p className="bio__subline text__small">
-          ©Mark Julien Hahn, 2024.{" "}
+          ©Mark Julien Hahn, {new Date().getFullYear()}.{" "}
           <Link href="/legal-notice" scroll={false}>
             Legal Notice
           </Link>
