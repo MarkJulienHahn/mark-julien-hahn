@@ -48,7 +48,7 @@ export default function Bio() {
             <br />
             Görlitzer Straße 52, 10997 Berlin
             <br />
-            <a href="mailto:mail@markjulienhahn.com">Email</a>
+            <a href="mailto:mail@markjulienhahn.de">Email</a>
           </p>
         </div>
         <p className="bio__subline text__small">
